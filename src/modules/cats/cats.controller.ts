@@ -14,7 +14,7 @@ export class CatsController {
   constructor(private readonly catsService: CatsService) {}
 
   @Post()
-  // @Roles(['admin'])
+  @Roles(['admin'])
   async create(@Body() createCatDto: CreateCatDto) {
     this.catsService.create(createCatDto);
   }
@@ -29,7 +29,7 @@ export class CatsController {
     return await this.catsService.findOne(id);
   }
   @Put(':id')
-  //  @Roles(['admin'])
+    @Roles(['admin'])
   async update(
     @Param('id', new ParseIntPipe()) id: number,
     @Body() updateCatDto: UpdateCatDto,
@@ -38,7 +38,7 @@ export class CatsController {
   }
   
   @Delete(':id')
-  // @Roles(['admin'])
+   @Roles(['admin'])
   async delete(@Param('id', new ParseIntPipe()) id: number) {
     return this.catsService.delete(id);
   }
