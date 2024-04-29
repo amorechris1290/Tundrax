@@ -1,5 +1,4 @@
-
-import { IsInt, IsString } from 'class-validator';
+import { IsInt, IsString } from "class-validator";
 
 export class UpdateCatDto {
   @IsString()
@@ -10,5 +9,4 @@ export class UpdateCatDto {
 
   @IsString()
   readonly breed: string;
-
 }
