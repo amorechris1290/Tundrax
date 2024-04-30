@@ -47,3 +47,10 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 
 Create new env file using .env.example then run command migration:run to run migrations.
+
+## Technologies used
+
+Node.js v18.16.1
+nest js
+typeorm
+pnpmp
