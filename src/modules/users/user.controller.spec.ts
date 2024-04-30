@@ -1,5 +1,5 @@
-
 import { Test, TestingModule } from '@nestjs/testing';
+
 import { UsersController } from './user.controller';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -35,7 +35,9 @@ describe('UsersController', () => {
         email: 'test@gmail.com',
         role: 'user',
       };
-      jest.spyOn(userService, 'create').mockImplementation(() => Promise.resolve(result));
+      jest
+        .spyOn(userService, 'create')
+        .mockImplementation(() => Promise.resolve(result));
 
       expect(await usersController.create(createUserDto)).toBe(result);
     });
@@ -48,7 +50,9 @@ describe('UsersController', () => {
         email: 'test@gmail.com',
         password: 'test',
       };
-      jest.spyOn(userService, 'login').mockImplementation(() => Promise.resolve(result));
+      jest
+        .spyOn(userService, 'login')
+        .mockImplementation(() => Promise.resolve(result));
 
       expect(await usersController.login(loginUserDto)).toBe(result);
     });

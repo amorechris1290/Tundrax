@@ -1,9 +1,8 @@
-import { registerAs } from "@nestjs/config";
-import type { DatabaseConfig } from "./config.types";
+import { registerAs } from '@nestjs/config';
 
-export default registerAs<DatabaseConfig>("database", () => {
-  console.log("database config", process.env.DATABASE_SYNCHRONIZE);
+import type { DatabaseConfig } from './config.types';
 
+export default registerAs<DatabaseConfig>('database', () => {
   return {
     type: process.env.DATABASE_TYPE,
     dialect: process.env.DATABASE_DIALECT,
@@ -14,7 +13,7 @@ export default registerAs<DatabaseConfig>("database", () => {
     password: process.env.DATABASE_PASSWORD,
     name: process.env.DATABASE_NAME,
     username: process.env.DATABASE_USERNAME,
-    synchronize: process.env.DATABASE_SYNCHRONIZE === "true",
-    logging: process.env.NODE_ENVIRONMENT === "production" ? false : true,
+    synchronize: process.env.DATABASE_SYNCHRONIZE === 'true',
+    logging: process.env.NODE_ENVIRONMENT === 'production' ? false : true,
   };
 });

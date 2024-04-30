@@ -1,14 +1,13 @@
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
-import { UserEntity } from "./entities/user.entity";
-import { CreateUserDto } from "./dto/create-user.dto";
-import { LoginUserDto } from "./dto/login-user.dto";
-import { JwtService } from "@nestjs/jwt";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { JwtService } from '@nestjs/jwt';
 
+import { UserEntity } from './entities/user.entity';
+import { CreateUserDto } from './dto/create-user.dto';
+import { LoginUserDto } from './dto/login-user.dto';
 @Injectable()
 export class UserService {
- 
   constructor(
     @InjectRepository(UserEntity)
     private userRepository: Repository<UserEntity>,
@@ -25,7 +24,11 @@ export class UserService {
     });
     if (IsUser) {
       if (IsUser.password === user.password) {
-        const payload = { email: user.email, sub: IsUser.id, role: IsUser.role};
+        const payload = {
+          email: user.email,
+          sub: IsUser.id,
+          role: IsUser.role,
+        };
         return {
           access_token: this.jwtService.sign(payload),
         };

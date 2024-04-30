@@ -1,4 +1,5 @@
 import { Test } from '@nestjs/testing';
+
 import { CatsController } from './cats.controller';
 import { CatsService } from './cats.service';
 import { UpdateCatDto } from './dto/update-cat.dto';
@@ -28,7 +29,9 @@ describe('CatsController', () => {
           name: 'Pixel',
         },
       ];
-      jest.spyOn(catsService, 'findAll').mockImplementation(() => Promise.resolve(result));
+      jest
+        .spyOn(catsService, 'findAll')
+        .mockImplementation(() => Promise.resolve(result));
 
       expect(await catsController.findAll()).toBe(result);
     });
@@ -41,7 +44,9 @@ describe('CatsController', () => {
         breed: 'Bombay',
         name: 'Pixel',
       };
-      jest.spyOn(catsService, 'findOne').mockImplementation(() => Promise.resolve(result));
+      jest
+        .spyOn(catsService, 'findOne')
+        .mockImplementation(() => Promise.resolve(result));
 
       expect(await catsController.findOne(1)).toBe(result);
     });
@@ -60,7 +65,9 @@ describe('CatsController', () => {
         breed: 'Bombay',
         name: 'Pixel',
       };
-      jest.spyOn(catsService, 'update').mockImplementation(() => Promise.resolve(result));
+      jest
+        .spyOn(catsService, 'update')
+        .mockImplementation(() => Promise.resolve(result));
 
       expect(await catsController.update(1, updateCatDto)).toBe(result);
     });
@@ -68,7 +75,9 @@ describe('CatsController', () => {
 
   describe('delete', () => {
     it('should delete a cat', async () => {
-      jest.spyOn(catsService, 'delete').mockImplementation(() => Promise.resolve(undefined));
+      jest
+        .spyOn(catsService, 'delete')
+        .mockImplementation(() => Promise.resolve(undefined));
 
       expect(await catsController.delete(1)).toBeUndefined();
     });

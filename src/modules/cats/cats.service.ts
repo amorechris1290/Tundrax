@@ -1,10 +1,11 @@
-import { Injectable } from "@nestjs/common";
-import { Cat } from "./interfaces/cat.interface";
-import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
-import { CatEntity } from "./entities/cats.entity";
-import { CreateCatDto } from "./dto/create-cat.dto";
-import { UpdateCatDto } from "./dto/update-cat.dto";
+import { Injectable } from '@nestjs/common';
+import { Cat } from './interfaces/cat.interface';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+
+import { CatEntity } from './entities/cats.entity';
+import { CreateCatDto } from './dto/create-cat.dto';
+import { UpdateCatDto } from './dto/update-cat.dto';
 
 @Injectable()
 export class CatsService {

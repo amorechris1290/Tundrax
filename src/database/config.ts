@@ -6,7 +6,7 @@ export default () => ({
     username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD,
     name: process.env.DATABASE_NAME,
-    logging: process.env.POSTGRESQL_DB_LOGGING === "true",
+    logging: process.env.POSTGRESQL_DB_LOGGING === 'true',
     max: process.env.DATABASE_POOL_MAX,
     min: process.env.DATABASE_POOL_MIN,
     synchronize: process.env.DATABASE_SYNCHRONIZE,
