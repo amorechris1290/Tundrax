@@ -26,7 +26,7 @@ export class CatsController {
   @Post()
   @Roles(['admin'])
   async create(@Body() createCatDto: CreateCatDto) {
-    this.catsService.create(createCatDto);
+    return this.catsService.create(createCatDto);
   }
 
   @Get()
