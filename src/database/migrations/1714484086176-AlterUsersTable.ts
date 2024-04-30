@@ -1,5 +1,5 @@
-import { MigrationInterface, QueryRunner } from "typeorm";
-import { TableColumn } from "typeorm/schema-builder/table/TableColumn";
+import { MigrationInterface, QueryRunner } from 'typeorm';
+import { TableColumn } from 'typeorm/schema-builder/table/TableColumn';
 
 export class AlterUsersTable1714484086176 implements MigrationInterface {
 
@@ -9,7 +9,7 @@ export class AlterUsersTable1714484086176 implements MigrationInterface {
                 name: 'role',
                 type: 'enum',
                 enum: ['admin', 'user'],
-                default: "'user'",
+                default: '\'user\'',
                 isNullable: false,
             })
         );

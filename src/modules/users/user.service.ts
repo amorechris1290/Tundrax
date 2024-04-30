@@ -19,15 +19,15 @@ export class UserService {
     return newUser;
   }
   async login(user: LoginUserDto) {
-    const IsUser = await this.userRepository.findOne({
+    const databaseUser = await this.userRepository.findOne({
       where: { email: user.email },
     });
-    if (IsUser) {
-      if (IsUser.password === user.password) {
+    if (databaseUser) {
+      if (databaseUser.password === user.password) {
         const payload = {
-          email: user.email,
-          sub: IsUser.id,
-          role: IsUser.role,
+          email: databaseUser.email,
+          sub: databaseUser.id,
+          role: databaseUser.role,
         };
         return {
           access_token: this.jwtService.sign(payload),

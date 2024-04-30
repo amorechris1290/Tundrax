@@ -1,30 +1,30 @@
-import { MigrationInterface, QueryRunner } from "typeorm";
-import { Table } from "typeorm/schema-builder/table/Table";
+import { MigrationInterface, QueryRunner } from 'typeorm';
+import { Table } from 'typeorm/schema-builder/table/Table';
 
 export class CreateCatsTable1714402452268 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "cats",
+        name: 'cats',
         columns: [
           {
-            name: "id",
-            type: "int",
+            name: 'id',
+            type: 'int',
             isPrimary: true,
             isGenerated: true,
-            generationStrategy: "increment",
+            generationStrategy: 'increment',
           },
           {
-            name: "name",
-            type: "varchar",
+            name: 'name',
+            type: 'varchar',
           },
           {
-            name: "age",
-            type: "int",
+            name: 'age',
+            type: 'int',
           },
           {
-            name: "breed",
-            type: "varchar",
+            name: 'breed',
+            type: 'varchar',
           },
         ],
       }),
@@ -32,6 +32,6 @@ export class CreateCatsTable1714402452268 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("cats");
+    await queryRunner.dropTable('cats');
   }
 }
