@@ -54,3 +54,10 @@ Node.js v18.16.1
 nest js
 typeorm
 pnpmp
+
+
+## Postmnan
+
+file: Tundrax.postman_collection.json
+
+can be imported to postman to test all end points

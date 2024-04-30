@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "87c4e37b-0897-4f94-b17a-f2719b90ec68",
+		"name": "Tundrax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34598070"
+	},
+	"item": [
+		{
+			"name": "Auth Service",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-Roles",
+								"value": "admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGdtYWlsLmNvbSIsInN1YiI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE0NDg2MDk2LCJleHAiOjE3MTQ0ODk2OTZ9.AIcFE8Hc_sUpCFLFUGHpTOpFRwnP9XaFK_1MjZpPmiI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \n        \n           \n           \"email\":\"testuser@gmail.com\",\n           \"password\":\"123\"\n\n        \n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/cats",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cats"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "admin",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-Roles",
+								"value": "admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGdtYWlsLmNvbSIsInN1YiI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE0NDg2MDk2LCJleHAiOjE3MTQ0ODk2OTZ9.AIcFE8Hc_sUpCFLFUGHpTOpFRwnP9XaFK_1MjZpPmiI",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \n        \n           \"name\":\"testuser\",\n           \"email\":\"testuser@gmail.com\",\n           \"password\":\"123\",\n           \"role\":\"admin\"\n\n        \n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "admin",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cats service",
+			"item": [
+				{
+					"name": "list cats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGdtYWlsLmNvbSIsInN1YiI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE0NDk2MzUwLCJleHAiOjE3MTQ0OTk5NTB9.tqVVkRM_RhBuruG0dplS0cLfjTHMzdsoK3d4CGVqDXo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/cats",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cat by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/cats/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cats",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update cate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGdtYWlsLmNvbSIsInN1YiI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE0NDk2MzUwLCJleHAiOjE3MTQ0OTk5NTB9.tqVVkRM_RhBuruG0dplS0cLfjTHMzdsoK3d4CGVqDXo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n          \n            \"name\": \"cat1\",\n            \"age\": 1,\n            \"breed\": \"idk\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/cats/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cats",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete cat",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGdtYWlsLmNvbSIsInN1YiI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE0NDk2MzUwLCJleHAiOjE3MTQ0OTk5NTB9.tqVVkRM_RhBuruG0dplS0cLfjTHMzdsoK3d4CGVqDXo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/cats/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cats",
+								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create cat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGdtYWlsLmNvbSIsInN1YiI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE0NDk2MzUwLCJleHAiOjE3MTQ0OTk5NTB9.tqVVkRM_RhBuruG0dplS0cLfjTHMzdsoK3d4CGVqDXo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"name\": \"cat1\",\n        \"age\": 1,\n        \"breed\": \"idk\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/cats",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
