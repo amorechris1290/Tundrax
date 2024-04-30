@@ -13,4 +13,7 @@ export class UserEntity {
 
   @Column({ type: "varchar", length: 200 })
   password: string;
+
+  @Column({type:"enum", enum:['admin','user'],default:'user', nullable: false})
+  role: string;
 }

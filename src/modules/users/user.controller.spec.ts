@@ -27,11 +27,13 @@ describe('UsersController', () => {
         name: 'test',
         email: 'test@gmail.com',
         password: 'test',
+        role: 'user',
       };
       const createUserDto: CreateUserDto = {
         name: 'test',
         password: 'test',
         email: 'test@gmail.com',
+        role: 'user',
       };
       jest.spyOn(userService, 'create').mockImplementation(() => Promise.resolve(result));
 
